@@ -9,7 +9,7 @@ class selenium_server::install {
     mode    => '0755',
     source  => "puppet:///modules/${module_name}/chromedriver-${selenium_server::chrome_driver_version}",
   }
-  
+
   file { '/usr/local/bin/selenium-server-standalone.jar':
     ensure  => file,
     owner   => 'root',
