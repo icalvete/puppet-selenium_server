@@ -1,0 +1,15 @@
+[Unit]
+Description=selenium_server
+
+[Service]
+User=<%= scope.lookupvar('selenium_server::selenium_server::owner') %>
+Group=<%= scope.lookupvar('selenium_server::selenium_server::group') %>
+Type=simple
+Restart=always
+RestartSec=1
+WorkingDirectory=/usr/local/bin
+ExecStart=/usr/bin/java -jar /usr/local/bin/selenium-server-standalone.jar
+
+[Install]
+WantedBy=multi-user.target
+
