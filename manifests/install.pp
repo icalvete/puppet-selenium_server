@@ -1,6 +1,7 @@
 class selenium_server::install {
 
   include java
+  include google_chrome
 
   file { '/usr/local/bin/chromedriver':
     ensure  => file,
